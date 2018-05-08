@@ -1,0 +1,110 @@
+
+.card-body {
+  background-color: #eee;
+  border: 1px solid #5D5C61;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-body:hover {
+  box-shadow:  10px 10px 10px rgba(0, 0, 0, .5);
+  cursor: pointer;
+}
+
+.card-header {
+  background-color: #111;
+  border-bottom: 3px solid #194;
+  color: #eee;
+}
+
+.material-icons {
+  font-size: 45px;
+}
+
+.tableHeader {
+  background-color: #111;
+  border-bottom: 3px solid #194;
+  color: #eee;
+}
+
+.header {
+  color: #eee;
+  margin-top: 10px;
+}
+
+.nav-tabs {
+  margin-top: 50px;
+  margin-left: 15px !important;
+}
+
+.nav-tabs .active {
+  background-color: #eee !important;
+  color: #194 !important;
+  border-bottom: 2px solid #194 !important;
+}
+
+.nav-link  {
+  color: #111 !important;
+}
+
+.tableMargin {
+  margin-top: 25px;
+}
+
+#afuCard {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #5D5C61;
+}
+
+#afuDash {
+  background-color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#poCard {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #5D5C61;
+}
+
+#poDash {
+  background-color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+table {
+  border: 1px solid #5D5C61;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+h5 {
+  color: #194;
+}
+
+/*Hide tables
+===============*/
+#itemized {
+  display: none;
+}
+
+#pastDue {
+  display: none;
+}
+
+#afuPastdue {
+  display: none;
+}
+
+#afuOutstanding {
+  display: none;
+}
+
+#dmTable {
+  display: none;
+}
+
+@media screen and (max-width:992px) {
+  .card {
+    margin-bottom: 20px !important;
+  }
+}

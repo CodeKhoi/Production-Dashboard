@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Compiled and minified CSS -->
+ 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+ 	<!-- Custom style -->
+ 	<link rel="stylesheet" href="../css/style.css">
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="../img/favicon.png" rel="shortcut icon" type="image/png">	
+	<title>Production Dashboard</title>	
+</head>
+
+<body>
+
+   	<!-- =====
+	 NAV TABS
+	========== -->
+	<div class="container">
+		<div class="row">
+			<ul class="nav nav-tabs">
+				<li class="nav-item">
+					<a class="nav-link active" href="#poTab" data-toggle="tab" onclick="showSameday()">PRINT ONLY</a>
+				</li>
+				<li class="nav-item">
+					<a id="afuNav" class="nav-link" href="#afuTab" data-toggle="tab" onclick="afuDash()">DIRECT MAIL</a>
+				</li>
+			</ul>
+			<!-- ==============
+			Print only tab
+			============== -->
+			<div class="container">
+				<div class="tab-content">
+					<div id="poTab" class="tab-pane active">
+						<div id="poCard" class="card text-center">
+							<div class="card-header"><h5 class="header">PRINT ONLY ORDERS • <span class="date">5/4/2018</span></h5></div>
+							<div class="container">
+								<div id="poDash" class="row">
+									<div class="col-lg-3">
+										<div id="samedayCard" class="card" onclick="showSameday()">
+											<div class="card-body">
+												<i class="material-icons">alarm</i>
+												<h5>SAME DAY</h5>
+												<h2>90</h2>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-3">
+										<div class="card">
+											<div class="card-body">
+												<i class="material-icons">assignment_turned_in</i>
+												<h5>COMPLETED</h5>
+												<h2>45</h2>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-3">
+										<div id="pendingCard" class="card" onclick="showPending()">
+											<div class="card-body">
+												<i class="material-icons">date_range</i>
+												<h5>PENDING</h5>
+												<h2>10</h2>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-3">
+										<div id="pastdueCard" class="card" onclick="showPastdue()">
+											<div class="card-body">
+												<i class="material-icons">notifications_active</i>
+												<h5>PAST DUE</h5>
+												<h2>3</h2>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>		
+						</div>
+					</div>
+					<!-- ============
+					Direct mail tab
+					=================-->
+					<div id="afuTab" class="tab-pane">
+						<div class="tab-content">
+							<div id="afuCard" class="card text-center">
+								<div class="card-header"><h5 class="header">AUTO FOLLOW-UP ORDERS • <span class="date">5/4/2018</span></h5></div>
+								<div class="container">
+									<div id="afuDash" class="row">
+										<div class="col-lg-3">
+											<div id="afuOrders" class="card">
+												<div class="card-body">
+													<i class="material-icons">today</i>
+													<h5>TODAYS ORDERS</h5>
+													<h2>20</h2>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-3">
+											<div class="card">
+												<div class="card-body">
+													<i class="material-icons">assignment_turned_in</i>
+													<h5>COMPLETED</h5>
+													<h2>17</h2>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-3">
+											<div id="outstandingCard" class="card" onclick="showOutstanding()">
+												<div class="card-body">
+													<i class="material-icons">warning</i>
+													<h5>OUTSTANDING</h5>
+													<h2>3</h2>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-3">
+											<div id="afupastdueCard" class="card" onclick="showafuPast()">
+												<div class="card-body">
+													<i class="material-icons">notifications_active</i>
+													<h5>PAST DUE</h5>
+													<h2>3</h2>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> 
+				</div> <!-- tab-content-->
+			</div>  <!-- card container -->
+		</div> <!-- row -->
+	</div> <!-- container -->
+
+	<!-- ==========================
+	SAME DAY and PENDING TABLE
+	========================== -->
+	<div id="poTable" class="container text-center tableMargin">
+		<div class="row">
+			<div class="col-sm">
+				<table class="table table-hover text-center"">
+					<thead>
+						<i class="material-icons">alarm</i>
+						<h5>SAME DAY</h5>
+					</thead>
+					<thead class="tableHeader">
+						<tr>
+							<th scope="col">PRODUCT</th>
+							<th scope="col">ORDERS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>BR88</td>
+							<td>30</td>
+						</tr>
+						<tr>
+							<td>PF4</td>
+							<td>50</td>
+						</tr>
+						<tr>
+							<td>PANO</td>
+							<td>10</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-sm">
+				<table class="table table-hover">
+					<thead>
+						<i class="material-icons">date_range</i>
+						<h5>PENDING</h5>
+					</thead>
+					<thead class="tableHeader">
+						<tr>
+							<th scope="col">PRODUCT</th>
+							<th scope="col">ORDERS</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>NP</td>
+							<td>5</td>
+						</tr>
+						<tr>
+							<td>SSB</td>
+							<td>3</td>
+						</tr>
+						<tr>
+							<td>ENV</td>
+							<td>2</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>		
+	</div>
+
+	<!-- ============================
+	PRINT ONLY ITEMIZED PENDING TABLE
+	============================= -->	
+	<div id="itemized" class="container text-center tableMargin">
+		<table class="table table-hover">
+			<thead>
+				<i class="material-icons">format_list_bulleted</i>
+				<h5>ITEMIZED PENDING ORDERS</h5>
+			</thead>
+			<thead class="tableHeader">
+				<tr>
+					<th scope="col">DATE SUBMITTED</th>
+					<th scope="col">ORDER #</th>
+					<th scope="col">CUSTOMER</th>
+					<th scope="col">PRODUCT</th>
+					<th scope="col">QTY</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>5/5/2018</td>
+					<td>98765</td>
+					<td>Lebron James</td>
+					<td>NP35</td>
+					<td>100</td>
+				</tr>
+				<tr>
+					<td>5/5/2018</td>
+					<td>94646</td>
+					<td>Lebron James</td>
+					<td>SSB</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>5/5/2018</td>
+					<td>92679</td>
+					<td>Lebron James</td>
+					<td>ENV12</td>
+					<td>500</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<!-- =====================
+	PRINT ONLY PAST DUE TABLE
+	====================== -->	
+	<div id="pastDue" class="container text-center tableMargin">
+		<table class="table table-hover">
+			<thead>
+				<i class="material-icons">notifications_active</i>
+				<h5>PAST DUE ORDERS</h5>
+			</thead>
+			<thead class="tableHeader">
+				<tr>
+					<th scope="col">DATE SUBMITTED</th>
+					<th scope="col">ORDER #</th>
+					<th scope="col">CUSTOMER</th>
+					<th scope="col">PRODUCT</th>
+					<th scope="col">QTY</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>5/3/2018</td>
+					<td>94587</td>
+					<td>Kevin Durant</td>
+					<td>PF1824</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>5/3/2018</td>
+					<td>98264</td>
+					<td>Kevin Durant</td>
+					<td>SS2840</td>
+					<td>5</td>
+				</tr>
+				<tr>
+					<td>5/3/2018</td>
+					<td>98710</td>
+					<td>Kevin Durant</td>
+					<td>SN43</td>
+					<td>250</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- ==========================
+	DIRECT MAIL SIDE JOBS TABLE
+	========================== -->	
+	<div id="dmTable" class="container text-center tableMargin">
+		<table class="table table-hover">
+			<thead>
+				<i class="material-icons">visibility</i>
+				<h5>DIRECT MAIL SIDE JOBS</h5>
+			</thead>
+			<thead class="tableHeader">
+				<tr>
+					<th scope="col">DATE SUBMITTED</th>
+					<th scope="col">ORDER #</th>
+					<th scope="col">CUSTOMER</th>
+					<th scope="col">PRODUCT</th>
+					<th scope="col">QTY</th>
+					<th scope="col">COMPLETED</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>5/8/2018</td>
+					<td>94587</td>
+					<td>Draymond Green</td>
+					<td>NL11</td>
+					<td>300</td>
+					<td><button type="submit" class="btn btn-success">Shipped</button></td>
+				</tr>
+				<tr>
+					<td>5/8/2018</td>
+					<td>99743</td>
+					<td>Draymond Green</td>
+					<td>NL11</td>
+					<td>300</td>
+					<td><button type="submit" class="btn btn-success">Shipped</button></td>
+				</tr>
+				<tr>
+					<td>5/8/2018</td>
+					<td>91538</td>
+					<td>Draymond Green</td>
+					<td>NL11</td>
+					<td>300</td>
+					<td><button type="submit" class="btn btn-success">Shipped</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<!-- ========================
+	AFU OUTSTANDING ORDERS TABLE
+	========================= -->
+	<div id="afuOutstanding" class="container text-center tableMargin">
+		<table class="table table-hover">
+			<thead>
+				<i class="material-icons">warning</i>
+				<h5>OUTSTANDING AFU ORDERS</h5>
+			</thead>
+			<thead class="tableHeader">
+				<tr>
+					<th scope="col">STATE</th>
+					<th scope="col">ORDER #</th>
+					<th scope="col">REF #</th>
+					<th scope="col">CUSTOMER</th>
+					<th scope="col">LEAD</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>PENDING</td>
+					<td>94587</td>
+					<td>34790</td>
+					<td>Steph Curry</td>
+					<td>Klay Thompson</td>
+				</tr>
+				<tr>
+					<td>BATCHING</td>
+					<td>98264</td>
+					<td>36290</td>
+					<td>Steph Curry</td>
+					<td>Klay Thompson</td>
+				</tr>
+				<tr>
+					<td>BATCHING</td>
+					<td>98710</td>
+					<td>31280</td>
+					<td>Steph Curry</td>
+					<td>Klay Thompson</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<!-- ========================
+	AFU PASTDUE ORDERS TABLE
+	========================= -->
+	<div id="afuPastdue" class="container text-center tableMargin">
+		<table class="table table-hover">
+			<thead>
+				<i class="material-icons">notifications_active</i>
+				<h5>PAST DUE AFU ORDERS</h5>
+			</thead>
+			<thead class="tableHeader">
+				<tr>
+					<th scope="col">STATE</th>
+					<th scope="col">ORDER #</th>
+					<th scope="col">REF #</th>
+					<th scope="col">CUSTOMER</th>
+					<th scope="col">LEAD</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>PENDING</td>
+					<td>94587</td>
+					<td>34790</td>
+					<td>Chris Paul</td>
+					<td>James Harden</td>
+				</tr>
+				<tr>
+					<td>BATCHING</td>
+					<td>98264</td>
+					<td>36290</td>
+					<td>Chris Paul</td>
+					<td>James Harden</td>
+				</tr>
+				<tr>
+					<td>BATCHING</td>
+					<td>98710</td>
+					<td>31280</td>
+					<td>Chris Paul</td>
+					<td>James Harden</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+ 	<!--Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+	<!-- Custom Script -->
+	<script src="../js/index.js" type="text/javascript"></script>
+</body>
+</html>
