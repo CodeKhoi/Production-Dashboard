@@ -2,14 +2,14 @@ function showSameday() {
 	var samedayCard = document.getElementById("samedayCard");
 	var indexTables = document.getElementById("poTable");
 	var itemizedTable = document.getElementById("itemized");
-	var pastdueTable = document.getElementById("pastDue");
+	var pastDueTable = document.getElementById("pastDue");
 	var outstandingTable = document.getElementById("afuOutstanding");
-	var afuPast = document.getElementById("afuPastdue");
+	var afuPast = document.getElementById("afuPastDue");
 	var dmTable = document.getElementById("dmTable");
 
 	if (samedayCard) {
 		itemized.style.display = "none";
-		pastdueTable.style.display = "none";
+		pastDueTable.style.display = "none";
 		outstandingTable.style.display = "none";
 		afuPast.style.display = "none";
 		dmTable.style.display = "none";
@@ -21,14 +21,14 @@ function showPending() {
 	var pendingCard = document.getElementById("pendingCard");
 	var indexTables = document.getElementById("poTable");
 	var itemizedTable = document.getElementById("itemized");
-	var pastdueTable = document.getElementById("pastDue");
+	var pastDueTable = document.getElementById("pastDue");
 	var outstandingTable = document.getElementById("afuOutstanding");
-	var afuPast = document.getElementById("afuPastdue");
+	var afuPast = document.getElementById("afuPastDue");
 	var dmTable = document.getElementById("dmTable");
 
 	if (pendingCard) {
 		indexTables.style.display = "none";
-		pastdueTable.style.display = "none";
+		pastDueTable.style.display = "none";
 		outstandingTable.style.display = "none";
 		afuPast.style.display = "none";
 		dmTable.style.display = "none";
@@ -36,22 +36,41 @@ function showPending() {
 	}
 }
 
-function showPastdue() {
+function showPastDue() {
 	var pastdueCard = document.getElementById("pastdueCard");
 	var indexTables = document.getElementById("poTable");
 	var itemizedTable = document.getElementById("itemized");
-	var pastdueTable = document.getElementById("pastDue");
+	var pastDueTable = document.getElementById("pastDue");
 	var outstandingTable = document.getElementById("afuOutstanding");
-	var afuPast = document.getElementById("afuPastdue");
+	var afuPast = document.getElementById("afuPastDue");
 	var dmTable = document.getElementById("dmTable");
 
-	if (pastdueCard) {
+	if (pastDueCard) {
 		indexTables.style.display = "none";
 		itemizedTable.style.display = "none";
 		outstandingTable.style.display = "none";
 		afuPast.style.display = "none";
 		dmTable.style.display = "none";
-		pastdueTable.style.display = "block";
+		pastDueTable.style.display = "block";
+	}
+}
+
+function dmDash() {
+	var afuTab = document.getElementById("afuNav");
+	var indexTables = document.getElementById("poTable");
+	var itemizedTable = document.getElementById("itemized");
+	var pastDueTable = document.getElementById("pastDue");
+	var outstandingTable = document.getElementById("afuOutstanding");
+	var afuPast = document.getElementById("afuPastDue");
+	var dmTable = document.getElementById("dmTable");
+
+	if (afuTab) {
+		indexTables.style.display = "none";
+		itemizedTable.style.display = "none";
+		pastDueTable.style.display = "none";
+		outstandingTable.style.display = "none";
+		afuPast.style.display = "none";
+		dmTable.style.display = "block";
 	}
 }
 
@@ -59,18 +78,18 @@ function afuDash() {
 	var afuTab = document.getElementById("afuNav");
 	var indexTables = document.getElementById("poTable");
 	var itemizedTable = document.getElementById("itemized");
-	var pastdueTable = document.getElementById("pastDue");
+	var pastDueTable = document.getElementById("pastDue");
 	var outstandingTable = document.getElementById("afuOutstanding");
-	var afuPast = document.getElementById("afuPastdue");
+	var afuPast = document.getElementById("afuPastDue");
 	var dmTable = document.getElementById("dmTable");
 
 	if (afuTab) {
 		indexTables.style.display = "none";
 		itemizedTable.style.display = "none";
-		pastdueTable.style.display = "none";
-		outstandingTable.style.display = "none";
+		pastDueTable.style.display = "none";
 		afuPast.style.display = "none";
-		dmTable.style.display = "block";
+		dmTable.style.display = "none";
+		outstandingTable.style.display = "block";
 	}
 }
 
@@ -78,15 +97,15 @@ function showOutstanding() {
 	var outstandingCard = document.getElementById("outstandingCard");
 	var indexTables = document.getElementById("poTable");
 	var itemizedTable = document.getElementById("itemized");
-	var pastdueTable = document.getElementById("pastDue");
+	var pastDueTable = document.getElementById("pastDue");
 	var outstandingTable = document.getElementById("afuOutstanding");
-	var afuPast = document.getElementById("afuPastdue");
+	var afuPast = document.getElementById("afuPastDue");
 	var dmTable = document.getElementById("dmTable");
 
 	if (outstandingCard) {
 		indexTables.style.display = "none";
 		itemizedTable.style.display = "none";
-		pastdueTable.style.display = "none";
+		pastDueTable.style.display = "none";
 		afuPast.style.display = "none";
 		dmTable.style.display = "none";
 		outstandingTable.style.display = "block";
@@ -94,18 +113,18 @@ function showOutstanding() {
 }
 
 function showafuPast() {
-	var afupastCard = document.getElementById("afupastdueCard");
+	var afuPastCard = document.getElementById("afuPastDueCard");
 	var indexTables = document.getElementById("poTable");
 	var itemizedTable = document.getElementById("itemized");
-	var pastdueTable = document.getElementById("pastDue");
+	var pastDueTable = document.getElementById("pastDue");
 	var outstandingTable = document.getElementById("afuOutstanding");
-	var afuPast = document.getElementById("afuPastdue");
+	var afuPast = document.getElementById("afuPastDue");
 	var dmTable = document.getElementById("dmTable");
 
-	if (afupastCard) {
+	if (afuPastCard) {
 		indexTables.style.display = "none";
 		itemizedTable.style.display = "none";
-		pastdueTable.style.display = "none";
+		pastDueTable.style.display = "none";
 		outstandingTable.style.display = "none";
 		dmTable.style.display = "none";
 		afuPast.style.display = "block";

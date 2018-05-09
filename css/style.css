@@ -1,7 +1,10 @@
+.card {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #5D5C61;
+}
 
 .card-body {
   background-color: #eee;
-  border: 1px solid #5D5C61;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -17,7 +20,7 @@
 }
 
 .material-icons {
-  font-size: 45px;
+  font-size: 40px;
 }
 
 .tableHeader {
@@ -50,10 +53,6 @@
   margin-top: 25px;
 }
 
-#afuCard {
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-  border: 1px solid #5D5C61;
-}
 
 #afuDash {
   background-color: #fff;
@@ -61,12 +60,13 @@
   margin-bottom: 20px;
 }
 
-#poCard {
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-  border: 1px solid #5D5C61;
+#poDash {
+  background-color: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-#poDash {
+#dmDash {
   background-color: #fff;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -81,8 +81,13 @@ h5 {
   color: #194;
 }
 
+h6 {
+  color: #194;
+}
+
 /*Hide tables
 ===============*/
+
 #itemized {
   display: none;
 }
@@ -91,7 +96,7 @@ h5 {
   display: none;
 }
 
-#afuPastdue {
+#afuPastDue {
   display: none;
 }
 
